@@ -35,9 +35,8 @@
     [parser setDelegate:self];
     [parser setShouldResolveExternalEntities:NO];
     [parser parse];
-    
-    _list = [NSArray arrayWithObjects: @"List 1", @"List 2", @"List 3", nil];
 }
+
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     
@@ -47,15 +46,25 @@
         item = [[NSMutableDictionary alloc]init];
         title = [[NSMutableString alloc]init];
         link = [[NSMutableString alloc]init];
+        pubDate = [[NSMutableString alloc]init]; //published Date
+        img = [[NSMutableString alloc]init]; //
     }
+    if([element isEqualToString:@"media:thumbnail"]) {
+        img =[[attributeDict objectForKey: @"url"] mutableCopy];
+    }
+
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     
     if ([element isEqualToString:@"title"]) {
         [title appendString:string];
-    } else if ([element isEqualToString:@"link"]) {
+    }
+    else if ([element isEqualToString:@"link"]) {
         [link appendString:string];
+    }
+    else if ([element isEqualToString:@"pubDate"]) {
+        [pubDate appendString:string];
     }
 }
 
@@ -64,6 +73,8 @@
     if ([elementName isEqualToString:@"item"]) {
         [item setObject:title forKey:@"title"];
         [item setObject:link forKey:@"link"];
+        [item setObject:pubDate forKey:@"pubDate"];
+        [item setObject:img forKey:@"img"];
         [feeds addObject:[item copy]];
     }
 }
@@ -88,22 +99,52 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+/*
+ * Tables Section --> Start
+*/
+
+//Dynamic height of the cell
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 75.0;
+}
+
+//Total No. of Records shown in the screen
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //return [_list count];
-    return [feeds count];
+    return 20;//As per the Requirement only 20 records
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     static NSString * tableIdentifier = @"SimpleTableCell";
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:tableIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableIdentifier];
     }
     //cell.textLabel.text = [_list objectAtIndex:indexPath.row];
-    cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
-    cell.imageView.image = [UIImage imageNamed:@"default.png"];
+    //cell.textLabel.numberOfLines = 0;
+    //cell.textLabel.text = [[[feeds objectAtIndex:indexPath.row] objectForKey:@"title"] stringByAppendingString : [ @"Date: " stringByAppendingString : [ [feeds objectAtIndex:indexPath.row] objectForKey:@"date"]] ];
+    
+    //cell.textLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
+    cell.textLabel.text = [[[feeds objectAtIndex:indexPath.row] objectForKey:@"title"] stringByAppendingString : [ @"\n" stringByAppendingString : [ [feeds objectAtIndex:indexPath.row] objectForKey:@"pubDate"]] ];
+    
+    
+    cell.textLabel.numberOfLines = 0;
+    cell.detailTextLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"pubDate"];
+    NSString* imgUrl = [[feeds objectAtIndex:indexPath.row] objectForKey:@"img"];
+    
+
+    
+    if ( [imgUrl isEqualToString:@""] )
+    {
+        cell.imageView.image = [UIImage imageNamed:@"default.jpg"];//Default Image
+        
+    }else{
+        cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: [[feeds objectAtIndex:indexPath.row] objectForKey:@"img"]]]];//IMAGE FROM REMOTE URL
+    }
+   
+   
     return cell;
 }
 
@@ -112,16 +153,35 @@
     [self performSegueWithIdentifier:@"showConnector" sender:self];
 }
 
+/*
+ * Tables Section --> End
+ */
+
+
+/*
+ * Segue Section --> Start
+ */
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([[segue identifier] isEqualToString:@"showConnector"]) {
         
         DetailViewController * detailView = segue.destinationViewController;
         NSIndexPath * indexPath = [self.tableView indexPathForSelectedRow];
+        
+        NSString *string = [feeds[indexPath.row] objectForKey: @"link"];
+        [[segue destinationViewController] setUrl:string];
+        
+        
         detailView.detailViewControllerString = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
+        detailView.detailViewControllerauthor = [[feeds objectAtIndex:indexPath.row] objectForKey:@"author"];
+        detailView.detailViewControllerdescription = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
         //detailView.detailViewControllerLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
         //NSLog(@"%@",detailView.detailViewControllerLabel.text);
     }
 }
+/*
+ * Segue Section --> End
+ */
 
 @end

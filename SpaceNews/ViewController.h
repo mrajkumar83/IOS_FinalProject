@@ -15,6 +15,8 @@
     NSMutableDictionary * item;
     NSMutableString * title;
     NSMutableString * link;
+    NSMutableString * pubDate;
+    NSMutableString * img;
     NSString * element;
 }
 
