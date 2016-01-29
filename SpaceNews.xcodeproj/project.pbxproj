@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C5E11501C5AF35300702C3F /* LoadingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5E114F1C5AF35300702C3F /* LoadingImage.png */; };
+		4C5E11561C5B64B900702C3F /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5E11551C5B64B800702C3F /* default.png */; };
 		4CC382DF1C5AE72300BEE642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC382DE1C5AE72300BEE642 /* main.m */; };
 		4CC382E21C5AE72300BEE642 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC382E11C5AE72300BEE642 /* AppDelegate.m */; };
 		4CC382E51C5AE72300BEE642 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC382E41C5AE72300BEE642 /* ViewController.m */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		4C5E114F1C5AF35300702C3F /* LoadingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoadingImage.png; path = ../../../../Downloads/LoadingImage.png; sourceTree = "<group>"; };
+		4C5E11551C5B64B800702C3F /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		4CC382D91C5AE72300BEE642 /* SpaceNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC382DD1C5AE72300BEE642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CC382DE1C5AE72300BEE642 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		4CC382DC1C5AE72300BEE642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C5E11551C5B64B800702C3F /* default.png */,
 				4C5E114F1C5AF35300702C3F /* LoadingImage.png */,
 				4CC382DD1C5AE72300BEE642 /* Info.plist */,
 				4CC382DE1C5AE72300BEE642 /* main.m */,
@@ -206,6 +209,7 @@
 				4CC382E81C5AE72300BEE642 /* Main.storyboard in Resources */,
 				4CC382ED1C5AE72300BEE642 /* LaunchScreen.xib in Resources */,
 				4CC382EA1C5AE72300BEE642 /* Images.xcassets in Resources */,
+				4C5E11561C5B64B900702C3F /* default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
