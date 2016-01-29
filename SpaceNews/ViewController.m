@@ -180,8 +180,7 @@
         
         detailView.detailViewControllerString = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
         detailView.detailViewControllerdescription = [[feeds objectAtIndex:indexPath.row] objectForKey:@"description"];
-        //detailView.detailViewControllerLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
-        //NSLog(@"%@",detailView.detailViewControllerLabel.text);
+        //detailView.detailViewControllerimg = [[feeds objectAtIndex:indexPath.row] objectForKey:@"img"];
     }
 }
 /*
