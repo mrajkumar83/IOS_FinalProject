@@ -17,6 +17,7 @@
     NSMutableString * link;
     NSMutableString * pubDate;
     NSMutableString * img;
+    NSMutableString * description;
     NSString * element;
 }
 

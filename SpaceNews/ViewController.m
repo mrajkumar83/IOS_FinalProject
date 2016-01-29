@@ -46,6 +46,7 @@
         item = [[NSMutableDictionary alloc]init];
         title = [[NSMutableString alloc]init];
         link = [[NSMutableString alloc]init];
+        description = [[NSMutableString alloc]init];
         pubDate = [[NSMutableString alloc]init]; //published Date
         img = [[NSMutableString alloc]init]; //
     }
@@ -66,6 +67,9 @@
     else if ([element isEqualToString:@"pubDate"]) {
         [pubDate appendString:string];
     }
+    else if ([element isEqualToString:@"description"]) {
+        [description appendString:string];
+    }
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
@@ -74,6 +78,7 @@
         [item setObject:title forKey:@"title"];
         [item setObject:link forKey:@"link"];
         [item setObject:pubDate forKey:@"pubDate"];
+        [item setObject:description forKey:@"description"];
         [item setObject:img forKey:@"img"];
         [feeds addObject:[item copy]];
     }
@@ -174,8 +179,7 @@
         
         
         detailView.detailViewControllerString = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
-        detailView.detailViewControllerauthor = [[feeds objectAtIndex:indexPath.row] objectForKey:@"author"];
-        detailView.detailViewControllerdescription = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
+        detailView.detailViewControllerdescription = [[feeds objectAtIndex:indexPath.row] objectForKey:@"description"];
         //detailView.detailViewControllerLabel.text = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
         //NSLog(@"%@",detailView.detailViewControllerLabel.text);
     }

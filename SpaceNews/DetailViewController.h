@@ -11,10 +11,12 @@
 @interface DetailViewController : UIViewController
 
 @property (nonatomic, retain) NSString * detailViewControllerString;
-@property (nonatomic, retain) NSString * detailViewControllerauthor;
 @property (nonatomic, retain) NSString * detailViewControllerdescription;
 
 @property (nonatomic, retain) IBOutlet UILabel * detailViewControllerLabel;
+@property (nonatomic, retain) IBOutlet UILabel * detailViewControllerDescription;
+@property (nonatomic, retain) IBOutlet UILabel * detailViewControllerLink;
+
 @property (copy, nonatomic) NSString *url;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
