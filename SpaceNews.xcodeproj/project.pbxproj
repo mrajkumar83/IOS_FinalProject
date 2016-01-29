@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5E11501C5AF35300702C3F /* LoadingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5E114F1C5AF35300702C3F /* LoadingImage.png */; };
 		4CC382DF1C5AE72300BEE642 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC382DE1C5AE72300BEE642 /* main.m */; };
 		4CC382E21C5AE72300BEE642 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC382E11C5AE72300BEE642 /* AppDelegate.m */; };
 		4CC382E51C5AE72300BEE642 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC382E41C5AE72300BEE642 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C5E114F1C5AF35300702C3F /* LoadingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoadingImage.png; path = ../../../../Downloads/LoadingImage.png; sourceTree = "<group>"; };
 		4CC382D91C5AE72300BEE642 /* SpaceNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC382DD1C5AE72300BEE642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CC382DE1C5AE72300BEE642 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		4CC382DC1C5AE72300BEE642 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C5E114F1C5AF35300702C3F /* LoadingImage.png */,
 				4CC382DD1C5AE72300BEE642 /* Info.plist */,
 				4CC382DE1C5AE72300BEE642 /* main.m */,
 			);
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5E11501C5AF35300702C3F /* LoadingImage.png in Resources */,
 				4CC382E81C5AE72300BEE642 /* Main.storyboard in Resources */,
 				4CC382ED1C5AE72300BEE642 /* LaunchScreen.xib in Resources */,
 				4CC382EA1C5AE72300BEE642 /* Images.xcassets in Resources */,
@@ -345,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SpaceNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +360,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = SpaceNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +420,7 @@
 				4CC382FE1C5AE72400BEE642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CC382FF1C5AE72400BEE642 /* Build configuration list for PBXNativeTarget "SpaceNewsTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				4CC383011C5AE72400BEE642 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
