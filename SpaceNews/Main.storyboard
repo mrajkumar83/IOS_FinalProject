@@ -113,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="detailViewControllerDescription" destination="Es0-lx-39V" id="NT5-dU-5na"/>
+                        <outlet property="detailViewControllerImage" destination="lv6-LZ-972" id="vNZ-Oa-Wx2"/>
                         <outlet property="detailViewControllerLabel" destination="3xY-zo-7hc" id="LWj-q1-AJL"/>
                         <outlet property="detailViewControllerLink" destination="USd-0R-Zkm" id="smD-dG-h0k"/>
                     </connections>

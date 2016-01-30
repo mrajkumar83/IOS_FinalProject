@@ -12,10 +12,12 @@
 
 @property (nonatomic, retain) NSString * detailViewControllerString;
 @property (nonatomic, retain) NSString * detailViewControllerdescription;
+@property (nonatomic, retain) NSString * detailViewControllerimage;
 
 @property (nonatomic, retain) IBOutlet UILabel * detailViewControllerLabel;
 @property (nonatomic, retain) IBOutlet UILabel * detailViewControllerDescription;
 @property (nonatomic, retain) IBOutlet UILabel * detailViewControllerLink;
+@property (nonatomic, retain) IBOutlet UIImageView * detailViewControllerImage;
 
 @property (copy, nonatomic) NSString *url;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;

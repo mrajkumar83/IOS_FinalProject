@@ -23,6 +23,12 @@
     _detailViewControllerLabel.text = _detailViewControllerString;
     _detailViewControllerDescription.text = _detailViewControllerdescription;
     _detailViewControllerLink.text = _url;
+    
+    NSURL * imageURL = [NSURL URLWithString:_detailViewControllerimage];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
+    [_detailViewControllerImage setImage: image];
+    
     //NSURL *myURL = [NSURL URLWithString: _url];
     //NSURLRequest *request = [NSURLRequest requestWithURL:myURL];
     //[_webView setDelegate: self];

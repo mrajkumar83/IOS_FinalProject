@@ -180,7 +180,7 @@
         
         detailView.detailViewControllerString = [[feeds objectAtIndex:indexPath.row] objectForKey:@"title"];
         detailView.detailViewControllerdescription = [[feeds objectAtIndex:indexPath.row] objectForKey:@"description"];
-        //detailView.detailViewControllerimg = [[feeds objectAtIndex:indexPath.row] objectForKey:@"img"];
+        detailView.detailViewControllerimage = [[feeds objectAtIndex:indexPath.row] objectForKey:@"img"];
     }
 }
 /*
