@@ -24,10 +24,22 @@
     _detailViewControllerDescription.text = _detailViewControllerdescription;
     _detailViewControllerLink.text = _url;
     
-    NSURL * imageURL = [NSURL URLWithString:_detailViewControllerimage];
-    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage * image = [UIImage imageWithData:imageData];
-    [_detailViewControllerImage setImage: image];
+   
+    
+    if ( [_detailViewControllerimage isEqualToString:@""] )
+    {
+        _detailViewControllerImage.image = [UIImage imageNamed:@"default.jpg"];//Default Image        
+        
+    }else{
+         NSURL * imageURL = [NSURL URLWithString:_detailViewControllerimage];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        [_detailViewControllerImage setImage: image];
+        
+    }
+    
+    
+    [self.activityIndicatorView stopAnimating];
     
     //NSURL *myURL = [NSURL URLWithString: _url];
     //NSURLRequest *request = [NSURLRequest requestWithURL:myURL];

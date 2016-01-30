@@ -19,6 +19,8 @@
 @property (nonatomic, retain) IBOutlet UILabel * detailViewControllerLink;
 @property (nonatomic, retain) IBOutlet UIImageView * detailViewControllerImage;
 
+ @property (nonatomic,strong) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+
 @property (copy, nonatomic) NSString *url;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
